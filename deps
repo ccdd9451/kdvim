@@ -10,3 +10,6 @@ cmake
 pyflakes
 pylint
 pep8
+
+# gem packages
+neovim
