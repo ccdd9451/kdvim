@@ -4,4 +4,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+call plug#begin('~/.vim/bundle')
 
+Plug 'Valloric/YouCompleteMe'
+
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+call plug#end()
