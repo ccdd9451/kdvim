@@ -35,33 +35,33 @@ fi
 
 echo "Step2: setting up symlinks"
 
-ln -sf "$KDVIM/" "$HOME/.vim"
+ln -sf "$KDVIM" "$HOME/.vim"
 if $FOR_VIM; then
     echo "source ~/.vim/init.vim" > $HOME/.vimrc
 fi
 if $FOR_NEOVIM; then
-    ln -sf "$KDVIM/" "$HOME/.config/nvim"
+    ln -sf "$KDVIM" "$HOME/.config/nvim"
 fi
 
 echo "Step3: update/install plugins using Vim-plug"
 system_shell=$SHELL
 export SHELL="/bin/sh"
 if $FOR_VIM; then
-    vim -u $KDVIM/.vimrc.bundles +PlugInstall! +PlugClean! +qall
+    vim -u $KDVIM/bundles +PlugInstall! +PlugClean! +qall
 else
-    nvim -u $KDVIM/.vimrc.bundles +PlugInstall! +PlugClean! +qall 
+    nvim -u $KDVIM/bundles +PlugInstall! +PlugClean! +qall 
 fi
 export SHELL=$system_shell
 
 
-echo "Step4: compile YouCompleteMe"
-echo "It will take a long time, just be patient!"
-echo "If error,you need to compile it yourself"
-echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
-# for anaconda python
-hash conda 2>/dev/null && conda install libgcc
-cd $KDVIM/bundle/YouCompleteMe/
-git submodule update --init --recursive
-python install.py --clang-completer
-
+# echo "Step4: compile YouCompleteMe"
+# echo "It will take a long time, just be patient!"
+# echo "If error,you need to compile it yourself"
+# echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
+# # for anaconda python
+# hash conda 2>/dev/null && conda install libgcc
+# cd $KDVIM/bundle/YouCompleteMe/
+# git submodule update --init --recursive
+# python install.py --clang-completer
+# 
 echo "Install Done!"
