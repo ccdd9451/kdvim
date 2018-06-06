@@ -1,9 +1,6 @@
-ruby <<EOF
-Dir.glob(ENV["HOME"]+"/.vim/vim.rc/*.vimrc").each do |x|
-  Vim.command "source #{x}"
-end
-EOF
-
+" Vim Scripts
+let mapleader = ';'
+let g:mapleader = ';'
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -19,4 +16,9 @@ end
 EOF
 call plug#end()
 
+ruby <<EOF
+Dir.glob(ENV["HOME"]+"/.vim/vim.rc/*.vimrc").each do |x|
+  Vim.command "source #{x}"
+end
+EOF
 
