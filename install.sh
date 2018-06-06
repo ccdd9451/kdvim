@@ -32,7 +32,6 @@ if $FOR_NEOVIM; then
     for i in $HOME/.config/nvim $HOME/.config/nvim/init.vim; do [ -e $i ] && [ ! -L $i ] && mv $i $i.old; done
     for i in $HOME/.config/nvim/init.vim $HOME/.config/nvim; do [ -L $i ] && unlink $i ; done
 fi
-rm -rf $KDVIM/autoload
 
 echo "Step2: setting up symlinks"
 
@@ -55,14 +54,14 @@ fi
 export SHELL=$system_shell
 
 
-# echo "Step4: compile YouCompleteMe"
-# echo "It will take a long time, just be patient!"
-# echo "If error,you need to compile it yourself"
-# echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
-# # for anaconda python
-# hash conda 2>/dev/null && conda install libgcc
-# cd $KDVIM/bundle/YouCompleteMe/
-# git submodule update --init --recursive
-# python install.py --clang-completer
-# 
+echo "Step4: compile YouCompleteMe"
+echo "It will take a long time, just be patient!"
+echo "If error,you need to compile it yourself"
+echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
+# for anaconda python
+hash conda 2>/dev/null && conda install libgcc
+cd $KDVIM/bundle/YouCompleteMe/
+git submodule update --init --recursive
+python install.py --clang-completer
+
 echo "Install Done!"
