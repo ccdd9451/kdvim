@@ -1,0 +1,12 @@
+neovim || vim
+
+build-essential
+silversearcher-ag
+python-dev
+ctags
+cmake
+
+# pip packages
+pyflakes
+pylint
+pep8
