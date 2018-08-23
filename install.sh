@@ -60,6 +60,8 @@ echo "Step3: update/install plugins using Vim-plug"
 system_shell=$SHELL
 export SHELL="/bin/sh"
 if $FOR_NEOVIM; then
+    pip install neovim
+    gem install neovim
     nvim -u $KDVIM/bundleUpdate.vim +PlugInstall! +qall
 else
     vim -u $KDVIM/init.vim +PlugInstall! +qall
