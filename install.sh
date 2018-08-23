@@ -5,6 +5,19 @@ KDVIM="$( cd "$( dirname "$0" )" && pwd )"/vim
 
 FOR_VIM=true
 FOR_NEOVIM=true
+if $FOR_NEOVIM; then
+    type nvim 2>/dev/null || { 
+echo "NVIM not found!
+
+install it using following commands:
+
+sudo apt-get install software-properties-common # (optional)
+sudo apt-add-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim" >&2;
+exit 1 }
+fi
+
 if [ "$1" != "" ]; then
     case $1 in
         --for-vim)
