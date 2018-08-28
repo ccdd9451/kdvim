@@ -60,7 +60,7 @@ echo "Step3: update/install plugins using Vim-plug"
 system_shell=$SHELL
 export SHELL="/bin/sh"
 if $FOR_NEOVIM; then
-    pip install neovim
+    pip -q install neovim
     gem install neovim
     nvim -u $KDVIM/bundleUpdate.vim +PlugInstall! +qall
 else
@@ -76,7 +76,7 @@ echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
 # for anaconda python
 hash conda 2>/dev/null && conda install libgcc
 cd $KDVIM/.bundle/YouCompleteMe/
-git submodule update --init --recursive
+git submodule --quiet update --init --recursive
 python install.py --clang-completer --quiet
 
 echo "Install Done!"

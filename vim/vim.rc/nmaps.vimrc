@@ -9,7 +9,7 @@ noremap H ^
 noremap L $
 
 " Highlights toggle
-noremap <silent><leader>/ :nohls<CR>
+noremap <silent><leader>/ :nohls \| redraw! <CR>
 
 " Quicker quit
 nnoremap q <Esc>
