@@ -74,7 +74,7 @@ echo "It will take a long time, just be patient!"
 echo "If error,you need to compile it yourself"
 echo "cd $KDVIM/bundle/YouCompleteMe/ && python install.py --clang-completer"
 # for anaconda python
-hash conda 2>/dev/null && conda install libgcc
+hash conda 2>/dev/null && conda install -y libgcc
 cd $KDVIM/.bundle/YouCompleteMe/
 git submodule --quiet update --init --recursive
 python install.py --clang-completer --quiet

@@ -1,4 +1,4 @@
-neovim || vim
+neovim || vim-nox
 
 build-essential
 silversearcher-ag
@@ -6,10 +6,15 @@ python-dev
 ctags
 cmake
 
+# RECOMMEND
+rvm
+conda
+
 # pip packages
 pyflakes
 pylint
 pep8
+yapf
 
 # gem packages
 neovim
