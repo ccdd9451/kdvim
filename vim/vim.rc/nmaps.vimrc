@@ -7,6 +7,7 @@ map <C-l> <C-W>l
 " Go to home and end using capitalized directions
 noremap H ^
 noremap L $
+noremap Y y$
 
 " Highlights toggle
 noremap <silent><leader>/ :nohls \| redraw! <CR>
