@@ -41,3 +41,13 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" Delete / Replace without changing registers
+nnoremap <leader>d "_d
+nnoremap <leader>p "_Vp
+
+" Split into two columns when working in a long file
+nnoremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
+" easier last cmd hit
+nnoremap @; @:
