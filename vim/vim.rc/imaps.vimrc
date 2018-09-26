@@ -1,6 +1,3 @@
-" y$ -> Y Make Y behave like other capitals
-inoremap Y y$
-
 " Mimic Emacs Line Editing in Insert Mode Only
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
