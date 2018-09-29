@@ -30,3 +30,5 @@ call expand_region#custom_text_objects({
     \ 'ii' :0,
     \ 'ai' :0,
     \ })
+
+Plug 'w0rp/ale'

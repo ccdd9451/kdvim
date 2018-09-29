@@ -1,5 +1,3 @@
-Plug 'w0rp/ale'
-
 " if you use Vundle, load plugins:
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
