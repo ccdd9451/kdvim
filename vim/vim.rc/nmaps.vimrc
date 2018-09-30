@@ -1,16 +1,22 @@
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+" Easier Window Moving
+map <C-W><C-J> <C-W>J
+map <C-W><C-K> <C-W>K
+map <C-W><C-H> <C-W>H
+map <C-W><C-L> <C-W>L
 
 " Go to home and end using capitalized directions
-noremap H ^
-noremap L $
-noremap Y y$
+nnoremap H ^
+nnoremap L $
+nnoremap Y y$
 
 " Highlights toggle
-noremap <silent><leader>/ :nohls \| redraw! <CR>
+nnoremap <silent><leader>/ :nohls \| redraw! <CR>
 
 " Quicker quit
 nnoremap q <Esc>
@@ -23,8 +29,8 @@ nnoremap U <C-r>
 " buffer switching
 nnoremap [b :bprevious<cr>
 nnoremap ]b :bnext<cr>
-noremap <left> :bp<CR>
-noremap <right> :bn<CR>
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 
 
 " Keep search pattern at the center of the screen.
