@@ -1,4 +1,4 @@
-#!/bin/bash
+#!env zsh
 
 # refer  spf13-vim bootstrap.sh`
 KDVIM="$( cd "$( dirname "$0" )" && pwd )"/vim
