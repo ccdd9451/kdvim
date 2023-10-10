@@ -1,0 +1,23 @@
+#!env -S sed -f
+
+\#^/_F0# {
+  c/_F0 /VIM-latin1 /BerkeleyMono-Regular ref
+  p
+}
+
+\#^/_F1# {
+  c/_F1 /VIM-latin1 /BerkeleyMono-Bold ref
+  p
+}
+
+\#^/_F2# {
+  c/_F2 /VIM-latin1 /BerkeleyMono-Italic ref
+  p
+}
+
+\#^/_F3# {
+  c/_F3 /VIM-latin1 /BerkeleyMono-BoldItalic ref
+  p
+}
+
+# vim:set et sts=2 sw=2 ts=2 ft=sed:
