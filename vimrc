@@ -119,7 +119,7 @@ set noinfercase ignorecase smartcase
 set completeopt-=preview
 set completeopt+=menuone,noselect,noinsert,longest
 set omnifunc=ale#completion#OmniFunc
-set formatoptions=cajoql
+set formatoptions=cjoql
 
 " others {{{1
 
