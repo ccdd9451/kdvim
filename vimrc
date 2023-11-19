@@ -18,7 +18,11 @@ Plugin 'lervag/vimtex'
 
 Plugin 'airblade/vim-rooter'
 Plugin 'gioele/vim-autoswap'
-Plugin 'kentarosasaki/vim-emacs-bindings'
+Plugin 'maxbrunsfeld/vim-emacs-bindings'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'kshenoy/vim-signature'
+Plugin 'wakatime/vim-wakatime'
 
 Plugin 'luochen1990/rainbow'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -50,9 +54,8 @@ let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#completion_delay = 0
 
 let g:mucomplete#chains = {}
-let g:mucomplete#chains.default = ['omni', 'ulti', 'path', 'incl', 'dict', 'uspl']
-let g:mucomplete#chains.vim = ['path', 'cmd', 'keyn', 'ulti']
-
+let g:mucomplete#chains.default = ['omni', 'path', 'incl', 'dict', 'uspl']
+let g:mucomplete#chains.vim = ['path', 'cmd', 'keyn']
 
 let g:UltiSnipsEditSplit = "tabdo"
 let g:UltiSnipsExpandTrigger = "<f5>" 
@@ -95,6 +98,10 @@ let g:airline#extensions#tabline#right_alt_sep = g:airline_right_alt_sep
 let g:rainbow_active = 1
 let g:airline_theme='papercolor'
 
+let g:session_autoload = 'no'
+let g:session_autosave = 'yes'
+let g:session_autosave_periodic = 1
+
 " appearance {{{1
 
 set number relativenumber
@@ -109,9 +116,11 @@ colorscheme PaperColor
 
 let g:mapleader = ';'
 nnoremap M :make!<space>
-nnoremap qq :quit
 nnoremap <leader>m :make!<space>
 nnoremap <leader>v :vertical<space>
+"nnoremap <nowait>qq :quit
+"nnoremap <C-q> q
+"nnoremap q <nop>
 
 " completion {{{1
 
@@ -119,7 +128,13 @@ set noinfercase ignorecase smartcase
 set completeopt-=preview
 set completeopt+=menuone,noselect,noinsert,longest
 set omnifunc=ale#completion#OmniFunc
+set dictionary=/usr/share/dict/american-english
 set formatoptions=cjoql
+
+inoremap <C-n> <C-x><C-o>
+let g:mucomplete#no_mappings = 1
+let g:mucomplete#always_use_completeopt = 1
+let g:mucomplete#enable_auto_at_startup = 0
 
 " others {{{1
 
@@ -130,7 +145,18 @@ set grepformat=%f:%l:%c:%m
 
 set printoptions=paper:letter
 let g:tex_flavor='latex'
+
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
 let g:netrw_winsize='-50'
+
+augroup formatset
+  autocmd!
+  autocmd ModeChanged [vV\x16]*:i setlocal fo-=a
+  autocmd ModeChanged n:i setlocal fo-=j
+  autocmd ModeChanged *:n setlocal fo+=j
+augroup END
+
 
 source $HOME/.vim/quickfix.vim
 " }}}1 vim: set ts=2 sw=2 sts=2 et fdm=marker fdl=99 :

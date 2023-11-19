@@ -1,5 +1,7 @@
 bundle/*
 view/*
+sessions/*
+spell/*
 
 # Swap
 [._]*.s[a-v][a-z]
