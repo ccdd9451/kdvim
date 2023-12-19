@@ -54,7 +54,12 @@ setlocal errorformat+=%-Z
 setlocal errorformat+=%-GResult%.%#
 setlocal errorformat+=%-G%.%#
 
-let g:copilot_enabled = 0
+setlocal formatoptions+=wat
+setlocal formatoptions-=l
+setlocal foldmethod=marker
+setlocal foldmarker=\\begin,\\end
+
+let b:copilot_enabled = 0
 hi Folded guibg=#131c2b guifg=#A0A0A0
 
 MUcompleteAutoOff

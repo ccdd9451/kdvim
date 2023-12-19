@@ -23,6 +23,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'kshenoy/vim-signature'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'skywind3000/asyncrun.vim'
 
 Plugin 'luochen1990/rainbow'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -34,7 +35,9 @@ call vundle#end()            " required
 " builtints {{{1
 
 unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+runtime! defaults.vim
+autocmd! vimHints
+
 packadd! matchit
 runtime! ftplugin/man.vim
 
@@ -114,9 +117,10 @@ colorscheme PaperColor
 
 " leaders {{{1
 
-let g:mapleader = ';'
+let mapleader = '\'
 nnoremap M :make!<space>
 nnoremap <leader>m :make!<space>
+nnoremap <leader>am :AsyncRun make<space>
 nnoremap <leader>v :vertical<space>
 "nnoremap <nowait>qq :quit
 "nnoremap <C-q> q
@@ -135,6 +139,7 @@ inoremap <C-n> <C-x><C-o>
 let g:mucomplete#no_mappings = 1
 let g:mucomplete#always_use_completeopt = 1
 let g:mucomplete#enable_auto_at_startup = 0
+let g:UltiSnipsExpandTrigger="<C-x><C-o>"
 
 " others {{{1
 
@@ -157,6 +162,7 @@ augroup formatset
   autocmd ModeChanged *:n setlocal fo+=j
 augroup END
 
+command Bd :up | %bd | e#
 
 source $HOME/.vim/quickfix.vim
 " }}}1 vim: set ts=2 sw=2 sts=2 et fdm=marker fdl=99 :
