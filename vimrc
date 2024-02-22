@@ -136,6 +136,7 @@ set dictionary=/usr/share/dict/american-english
 set formatoptions=cjoql
 
 inoremap <C-n> <C-x><C-o>
+nnoremap <silent><nowait> <A-CR><A-CR> :ALEFix<CR> 
 let g:mucomplete#no_mappings = 1
 let g:mucomplete#always_use_completeopt = 1
 let g:mucomplete#enable_auto_at_startup = 0
