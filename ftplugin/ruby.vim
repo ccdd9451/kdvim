@@ -18,3 +18,17 @@ function! s:GetRequiredFilePath()
 endfunction
 
 nnoremap <buffer> gf :exec <SID>GetRequiredFilePath()<cr>
+
+function! RunRake(...)
+  " Save the current makeprg setting
+  let l:original_makeprg = &makeprg
+  " Set makeprg to rake with any additional arguments
+  let &makeprg = 'rake ' . join(a:000, ' ')
+  " Run the make command
+  execute ':make'
+  " Restore the original makeprg setting
+  let &makeprg = l:original_makeprg
+endfunction
+
+command! -nargs=* Rake call RunRake(<f-args>)
+cnoreabbrev rake Rake
