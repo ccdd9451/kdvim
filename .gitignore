@@ -17,9 +17,11 @@ Sessionx.vim
 
 # Temporary
 .netrwhist
+.netrwbook
 *~
+
 # Auto-generated tag files
 tags
-# Persistent undo
 
+# Persistent undo
 [._]*.un~
