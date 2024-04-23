@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'dense-analysis/ale'
 Plugin 'othree/xml.vim'
+Plugin 'slim-template/vim-slim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -143,7 +144,9 @@ let g:mucomplete#enable_auto_at_startup = 0
 let g:UltiSnipsExpandTrigger="<C-x><C-o>"
 
 " others {{{1
+source $HOME/.vim/quickfix.vim
 
+set exrc secure
 set autowriteall
 set mouse=a ttymouse=sgr balloonevalterm
 set grepprg=ag\ --vimgrep\ $* 
@@ -164,6 +167,4 @@ augroup formatset
 augroup END
 
 command Bd :up | %bd | e#
-
-source $HOME/.vim/quickfix.vim
 " }}}1 vim: set ts=2 sw=2 sts=2 et fdm=marker fdl=99 :
