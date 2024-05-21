@@ -11,13 +11,17 @@ Plugin 'lifepillar/vim-mucomplete'
 Plugin 'dense-analysis/ale'
 Plugin 'othree/xml.vim'
 Plugin 'slim-template/vim-slim'
+Plugin 'Yggdroot/indentLine'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'github/copilot.vim'
 Plugin 'lervag/vimtex'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'airblade/vim-rooter'
+Plugin 'embear/vim-localvimrc'
 Plugin 'gioele/vim-autoswap'
 Plugin 'maxbrunsfeld/vim-emacs-bindings'
 Plugin 'xolox/vim-misc'
@@ -50,15 +54,20 @@ let g:ale_linters.ruby = ['standardrb']
 let g:ale_linters.sh = ['shellcheck']
 
 let g:ale_fixers = {}
+let g:ale_fixers.cpp = ['clang-format']
 let g:ale_fixers.ruby = ['standardrb']
 
 let g:ale_linters_explicit = 1
 let g:ale_virtualtext_cursor = 'current'
-let g:mucomplete#enable_auto_at_startup = 1
+
+let g:mucomplete#no_mappings = 1
+let g:mucomplete#always_use_completeopt = 1
+let g:mucomplete#enable_auto_at_startup = 0
 let g:mucomplete#completion_delay = 0
 
 let g:mucomplete#chains = {}
 let g:mucomplete#chains.default = ['omni', 'path', 'incl', 'dict', 'uspl']
+let g:mucomplete#chains.cpp = ['omni', 'incl', 'tags', 'path', 'ulti']
 let g:mucomplete#chains.vim = ['path', 'cmd', 'keyn']
 
 let g:UltiSnipsEditSplit = "tabdo"
@@ -66,6 +75,7 @@ let g:UltiSnipsExpandTrigger = "<f5>"
 let g:UltiSnipsListSnippets = "<f6>" 
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsExpandTrigger="<C-x><C-o>"
 
 " package - airline {{{1
 
@@ -102,6 +112,9 @@ let g:airline#extensions#tabline#right_alt_sep = g:airline_right_alt_sep
 let g:rainbow_active = 1
 let g:airline_theme='papercolor'
 
+let g:localvimrc_persistent = 2
+let g:localvimrc_sandbox = 0
+
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
@@ -123,6 +136,7 @@ nnoremap M :make!<space>
 nnoremap <leader>m :make!<space>
 nnoremap <leader>am :AsyncRun make<space>
 nnoremap <leader>v :vertical<space>
+nnoremap <leader>Q Q
 "nnoremap <nowait>qq :quit
 "nnoremap <C-q> q
 "nnoremap q <nop>
@@ -138,10 +152,6 @@ set formatoptions=cjoql
 
 inoremap <C-n> <C-x><C-o>
 nnoremap <silent><nowait> <A-CR><A-CR> :ALEFix<CR> 
-let g:mucomplete#no_mappings = 1
-let g:mucomplete#always_use_completeopt = 1
-let g:mucomplete#enable_auto_at_startup = 0
-let g:UltiSnipsExpandTrigger="<C-x><C-o>"
 
 " others {{{1
 source $HOME/.vim/quickfix.vim

@@ -1,5 +1,6 @@
 setlocal makeprg=ruby\ -w\ %
 setlocal path+=lib
+setlocal tags+=/home/kaidong/.rvm/gems/*/tags
 
 function! s:GetRequiredFilePath()
     let l:cword = expand('<cWORD>')

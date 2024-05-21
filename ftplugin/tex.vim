@@ -64,3 +64,4 @@ let b:copilot_enabled = 0
 hi Folded guibg=#131c2b guifg=#A0A0A0
 
 MUcompleteAutoOff
+IndentLinesDisable
