@@ -6,5 +6,3 @@ setlocal textwidth=120
 
 setlocal foldmethod=syntax
 setlocal foldlevel=99
-
-IndentLinesDisable

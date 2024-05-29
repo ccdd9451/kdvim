@@ -108,7 +108,9 @@ let g:airline#extensions#tabline#right_sep = g:airline_right_sep
 let g:airline#extensions#tabline#right_alt_sep = g:airline_right_alt_sep
 
 " package - others {{{1
-"
+
+let g:indentLine_setConceal = 0
+let g:indentLine_fileTypeExclude = ['cpp', 'tex']
 let g:rainbow_active = 1
 let g:airline_theme='papercolor'
 
