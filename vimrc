@@ -11,6 +11,7 @@ Plugin 'lifepillar/vim-mucomplete'
 Plugin 'dense-analysis/ale'
 Plugin 'othree/xml.vim'
 Plugin 'slim-template/vim-slim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'Yggdroot/indentLine'
 
 Plugin 'SirVer/ultisnips'
@@ -52,10 +53,12 @@ let g:ale_linters = {}
 let g:ale_linters.vim = ['vint']
 let g:ale_linters.ruby = ['standardrb']
 let g:ale_linters.sh = ['shellcheck']
+let g:ale_linters.javascript = ['standard']
 
 let g:ale_fixers = {}
 let g:ale_fixers.cpp = ['clang-format']
 let g:ale_fixers.ruby = ['standardrb']
+let g:ale_fixers.javascript = ['standard']
 
 let g:ale_linters_explicit = 1
 let g:ale_virtualtext_cursor = 'current'
