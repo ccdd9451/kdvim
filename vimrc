@@ -51,13 +51,13 @@ runtime! ftplugin/man.vim
 
 let g:ale_linters = {}
 let g:ale_linters.vim = ['vint']
-let g:ale_linters.ruby = ['standardrb']
+let g:ale_linters.ruby = ['rubocop']
 let g:ale_linters.sh = ['shellcheck']
 let g:ale_linters.javascript = ['standard']
 
 let g:ale_fixers = {}
 let g:ale_fixers.cpp = ['clang-format']
-let g:ale_fixers.ruby = ['standardrb']
+let g:ale_fixers.ruby = ['rubocop']
 let g:ale_fixers.javascript = ['standard']
 
 let g:ale_linters_explicit = 1
