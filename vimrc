@@ -142,6 +142,7 @@ nnoremap <leader>m :make!<space>
 nnoremap <leader>am :AsyncRun make<space>
 nnoremap <leader>v :vertical<space>
 nnoremap <leader>Q Q
+nnoremap <leader>f :Files<CR>
 "nnoremap <nowait>qq :quit
 "nnoremap <C-q> q
 "nnoremap q <nop>
@@ -179,6 +180,11 @@ augroup formatset
   autocmd ModeChanged [vV\x16]*:i setlocal fo-=a
   autocmd ModeChanged n:i setlocal fo-=j
   autocmd ModeChanged *:n setlocal fo+=j
+augroup END
+
+augroup termset
+  autocmd!
+  autocmd TerminalOpen * setlocal nonumber norelativenumber
 augroup END
 
 command Bd :up | %bd | e#
