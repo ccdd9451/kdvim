@@ -130,6 +130,7 @@ set number relativenumber
 set list listchars=tab:▸\ ,trail:·,nbsp:␣,extends:»,precedes:«
 set showcmd visualbell shortmess+=c belloff+=ctrlg
 set splitright
+set undofile
 
 set termguicolors background=dark
 colorscheme PaperColor
